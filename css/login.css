@@ -1,0 +1,54 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    padding: 3rem;
+    border-radius: .75rem;
+    color: white;
+    width: 20%;
+    gap: .75rem;
+}
+
+input {
+    padding: 15px;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    font-size: 15px;
+}
+
+.button-login {
+    background-color: dodgerblue;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: .3rem;
+    color: white;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.button-login:hover {
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+
+.button-register {
+    display: in;
+    background-color: rgb(75, 99, 123);
+    border: none;
+    padding: 1rem;
+    width: auto;
+    text-decoration: none;
+    border-radius: .3rem;
+    color: white;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.button-register:hover {
+    background-color: rgb(97, 118, 124);
+    cursor: pointer;
+}
