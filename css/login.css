@@ -19,7 +19,7 @@ main {
     justify-content: center;
 }
 
-.teste {
+.container {
     display: flex;
     justify-content:space-around;
 

@@ -20,19 +20,13 @@ main {
 }
 
 .form {
-    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9) !important;
     padding: 3rem;
     border-radius: .75rem;
     color: white;
-    width: 30%;
-}
-
-.container-cadastro {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 1.5rem 0;
+    width: 20%;
     gap: .75rem;
 }
 
@@ -42,10 +36,9 @@ input {
     border-radius: .3rem;
     outline: none;
     font-size: 15px;
-    width: 40%;
 }
 
-.butao {
+.button-register {
     background-color: dodgerblue;
     border: none;
     padding: 1rem;
@@ -56,23 +49,12 @@ input {
     transition: background-color 0.3s ease;
 }
 
-.butao:hover {
+.button-register:hover {
     background-color: deepskyblue;
     cursor: pointer;
 }
 
-.cadastro {
-    background-color: rgb(75, 99, 123);
-    border: none;
-    padding: 8%;
-    width: 100%;
-    border-radius: 10px;
-    color: white;
-    font-size: 15px;
-    
-}
-
-.cadastro:hover {
-    background-color: rgb(97, 118, 124);
-    cursor: pointer;
+.voltar {
+    text-decoration: none;
+    color: aliceblue;
 }

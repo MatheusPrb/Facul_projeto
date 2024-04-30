@@ -9,7 +9,8 @@
     
 </head>
 <body>
-    <main><div class="teste">
+    <main>
+        <div class="container">
             <div class="texto">
                 <h1>Esse é o GreenScore, um site feito para transformar ações sustentaveis em premios e beneficios</h1>
                     <br><br>
@@ -28,7 +29,7 @@
                         <input type="password" placeholder="*******">
                         <button class="button-login" type="button">Enviar</button>
                         <br>
-                        <a href="cadastro.html"class="button-register">Cadastre-se</a>
+                        <a href="cadastro.php"class="button-register">Cadastre-se</a>
                     </form>
         </div>
 
