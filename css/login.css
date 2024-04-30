@@ -1,3 +1,49 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw; 
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, cyan, yellow); 
+    font-size: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teste {
+    display: flex;
+    justify-content:space-around;
+
+}
+.texto {
+    width: 50%;
+    color: #202d30; 
+}
+
+.texto h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+.texto h3 {
+    font-size: 25px;
+    font-weight: normal;
+
+}
+
+.chamada {
+    font-size: 30px !important; 
+    font-weight: 600 !important;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -32,7 +78,6 @@ input {
     background-color: deepskyblue;
     cursor: pointer;
 }
-
 
 .button-register {
     display: in;
