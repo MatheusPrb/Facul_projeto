@@ -8,14 +8,11 @@ if (isset($_POST['submit'])) {
   $sobrenome = $_POST['sobrenome'];
   $cpf = $_POST['cpf'];
   $email = $_POST['email'];
-  $senha = $_POST['senha']; // Capture password from form
+  $senha = $_POST['senha'];
 
-  // Hashing the password with a random salt (recomendado)
-  $salt = bin2hex(random_bytes(16)); // Gera um salt aleatório
-  $hashedPassword = password_hash($senha, PASSWORD_DEFAULT, ['salt' => $salt]);
-
-  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, sobrenome, cpf, email, senha) VALUES ('$nome','$sobrenome','$cpf','$email', '$hashedPassword')");
-
+  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, sobrenome, cpf, email, senha) VALUES ('$nome','$sobrenome','$cpf','$email', '$senha')");
+    
+  header('Location: login.php');
 }
 
 ?>
@@ -40,7 +37,7 @@ if (isset($_POST['submit'])) {
                     <input type="email" name = "email" placeholder="email">
                     <input type="password" name = "senha" placeholder="senha">
                 <input  class="button-register" type="submit" name="submit" id="submit">
-                <a href="./index.php" class="voltar">Voltar</a>
+                <a href="./login.php" class="voltar">Voltar</a>
             </form>
         </main>
     </body>

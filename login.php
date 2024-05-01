@@ -22,12 +22,12 @@
                     <h2 class="chamada">Então aproveite e bora ser sustentavel!</h2>
                 </div>
 
-                    <form action="" class="form">
+                    <form action="testeLogin.php" method="POST" class="form">
                         <h1>Login</h1>
                         <br>
-                        <input type="text" placeholder="Digite seu nome aqui">
-                        <input type="password" placeholder="*******">
-                        <button class="button-login" type="button">Enviar</button>
+                        <input type="text" name="email" placeholder="Digite seu email aqui">
+                        <input type="password" name="senha" placeholder="*******">
+                        <input  class="button-login" type="submit" name="submit" id="submit" value="Enviar">
                         <br>
                         <a href="cadastro.php"class="button-register">Cadastre-se</a>
                     </form>
