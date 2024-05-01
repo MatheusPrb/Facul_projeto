@@ -7,7 +7,7 @@ body {
     height: 100vh;
     width: 100vw; 
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, cyan, yellow); 
+    background-color: #98FF98;
     font-size: 100%;
 }
 
@@ -22,8 +22,8 @@ main {
 .container {
     display: flex;
     justify-content:space-around;
-
 }
+
 .texto {
     width: 50%;
     color: #202d30; 
@@ -39,15 +39,10 @@ main {
 
 }
 
-.chamada {
-    font-size: 30px !important; 
-    font-weight: 600 !important;
-}
-
 .form {
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9) !important;
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 3rem;
     border-radius: .75rem;
     color: white;
@@ -96,4 +91,139 @@ input {
 .button-register:hover {
     background-color: rgb(97, 118, 124);
     cursor: pointer;
+}
+
+@media (min-width: 320px) {
+    * {
+        margin-left: 1.48%;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .texto {
+        margin-top: 161% !important;
+        width: 85%;
+    }
+
+    .texto h1{
+        font-size: 1.7625rem;
+    }
+    
+    .texto h2 {
+        font-size: 1.3500rem;
+        font-weight: 600;
+    }
+    .texto h3 {
+        font-size: 1.2500rem ;
+        font-weight: normal ;
+    }
+
+    .form {
+        width: 55%;
+        height: 130%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+@media (min-height: 660px) {
+    .texto {
+        margin-top: 150% !important;
+    }
+
+}
+
+@media (min-width: 375px) {
+    .texto {
+        margin-top: 130% !important;
+        height: 100% !important;
+    }
+
+    .texto h1{
+        font-size: 1.8625rem;
+    }
+    
+    .texto h2 {
+        font-size: 1.5500rem;
+    }
+    
+    .texto h3 {
+        font-size: 1.3500rem ;
+    }
+
+    .form {
+        width: 60%;
+    }
+}
+
+@media (min-width: 425px) {
+    .texto {
+        margin-top: 120% !important;
+        width: 85%;
+    }
+
+    .texto h1{
+        font-size: 1.975rem;
+    }
+    
+    .texto h2 {
+        font-size: 1.6625rem;
+    }
+
+    .texto h3 {
+        font-size: 1.4500rem;
+    }
+
+    .form {
+        width: 64%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    * {
+        margin-left: 0% !important;
+    }
+
+    main {
+        margin-top: 0%;   
+    }
+
+    .container {
+        display: flex;
+        align-items: start ;
+        justify-content: space-around;
+    }
+    
+    .texto {
+        margin-top: 0% !important;  /* Mudar nos outros para dar epaço pelo container, não somanete pelo texto */
+        width: 40%;
+        color: #202d30; 
+    }
+
+    .texto h1 {
+        font-size: 1.675rem;
+    }
+    
+    .texto h2 {
+        font-size: 1.5625rem;
+    }
+    
+    .texto h3 {
+        font-size: 1.2500rem;
+    }
+    
+    .form {
+        margin-top: 0%;  /* Mudar nos outros para dar epaço pelo container, não somanete pelo form */
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 3rem;
+        border-radius: .75rem;
+        color: white;
+        width: 30%;
+        gap: .75rem;
+    }
 }
