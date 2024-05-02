@@ -14,29 +14,6 @@ body {
 main {
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    display: flex;
-    justify-content:space-around;
-}
-
-.texto {
-    width: 50%;
-    color: #202d30; 
-}
-
-.texto h2 {
-    font-size: 30px;
-    font-weight: 600;
-}
-.texto h3 {
-    font-size: 25px;
-    font-weight: normal;
-
 }
 
 .form {
@@ -46,16 +23,15 @@ main {
     padding: 3rem;
     border-radius: .75rem;
     color: white;
-    width: 20%;
     gap: .75rem;
 }
 
 input {
-    padding: 15px;
+    padding: 0.938rem;
     border: none;
     border-radius: .3rem;
     outline: none;
-    font-size: 15px;
+    font-size: 0.938rem;
 }
 
 .button-login {
@@ -65,7 +41,7 @@ input {
     width: 100%;
     border-radius: .3rem;
     color: white;
-    font-size: 15px;
+    font-size: 0.938rem;
     transition: background-color 0.3s ease;
 }
 
@@ -83,7 +59,7 @@ input {
     text-decoration: none;
     border-radius: .3rem;
     color: white;
-    font-size: 15px;
+    font-size: 0.938rem;
     transition: background-color 0.3s ease;
     text-align: center;
 }
@@ -95,135 +71,72 @@ input {
 
 @media (min-width: 320px) {
     * {
-        margin-left: 1.48%;
+        margin-left: 1.28%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container {
-        display: block;
+        margin-top: 5%;    
     }
 
     .texto {
-        margin-top: 161% !important;
-        width: 85%;
+        width: 88%;
     }
 
     .texto h1{
-        font-size: 1.7625rem;
+        font-size: 1.75rem;
     }
     
     .texto h2 {
-        font-size: 1.3500rem;
+        font-size: 1.375rem;
         font-weight: 600;
     }
     .texto h3 {
-        font-size: 1.2500rem ;
-        font-weight: normal ;
-    }
-
-    .form {
-        width: 55%;
-        height: 130%;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-}
-
-@media (min-height: 660px) {
-    .texto {
-        margin-top: 150% !important;
-    }
-
-}
-
-@media (min-width: 375px) {
-    .texto {
-        margin-top: 130% !important;
-        height: 100% !important;
-    }
-
-    .texto h1{
-        font-size: 1.8625rem;
-    }
-    
-    .texto h2 {
-        font-size: 1.5500rem;
-    }
-    
-    .texto h3 {
-        font-size: 1.3500rem ;
+        font-size: 1.25rem;
+        font-weight: normal;
     }
 
     .form {
         width: 60%;
-    }
-}
-
-@media (min-width: 425px) {
-    .texto {
-        margin-top: 120% !important;
-        width: 85%;
-    }
-
-    .texto h1{
-        font-size: 1.975rem;
-    }
-    
-    .texto h2 {
-        font-size: 1.6625rem;
-    }
-
-    .texto h3 {
-        font-size: 1.4500rem;
-    }
-
-    .form {
-        width: 64%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        
     }
 }
 
 @media (min-width: 768px) {
-
     * {
-        margin-left: 0% !important;
-    }
-
-    main {
-        margin-top: 0%;   
+        margin-left: 0%;
+        margin-right: 1.4%;
     }
 
     .container {
         display: flex;
-        align-items: start ;
+        align-items: flex-start !important;
         justify-content: space-around;
-    }
-    
-    .texto {
-        margin-top: 0% !important;  /* Mudar nos outros para dar epaço pelo container, não somanete pelo texto */
-        width: 40%;
-        color: #202d30; 
+        margin-top: 10%;
+        padding: 2%;
     }
 
-    .texto h1 {
-        font-size: 1.675rem;
+    .texto {
+        width: 55%;
     }
-    
-    .texto h2 {
-        font-size: 1.5625rem;
-    }
-    
-    .texto h3 {
-        font-size: 1.2500rem;
-    }
-    
+
     .form {
-        margin-top: 0%;  /* Mudar nos outros para dar epaço pelo container, não somanete pelo form */
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 3rem;
-        border-radius: .75rem;
-        color: white;
-        width: 30%;
-        gap: .75rem;
+        width: 25%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        margin-top: 6%;
     }
 }
