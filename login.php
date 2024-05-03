@@ -16,8 +16,7 @@
                     <br><br>
                     <h2>Funciona assim:</h2>
                     <br>
-                    <h3>Você realiza uma boa ação, contabiliza ela no site e acoumula pontos</h3>
-                    <h3>Quando juntar bastante pontos, poderá ir na aba de trocas e escolher entre diversos premios e promoções</h3>
+                    <h3>Você realiza uma boa ação, contabiliza ela no site e acoumula pontos<br>Quando juntar bastante pontos, poderá ir na aba de trocas e escolher entre diversos premios e promoções</h3>
                     <br><br>
                     <h2>Então aproveite e bora ser sustentavel!</h2>
                 </div>
