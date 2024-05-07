@@ -24,7 +24,7 @@
                     <form action="testeLogin.php" method="POST" class="form">
                         <h1>Login</h1>
                         <br>
-                        <input type="text" name="email" placeholder="Digite seu email aqui">
+                        <input type="text" name="email" placeholder="Email">
                         <input type="password" name="senha" placeholder="*******">
                         <input  class="button-login" type="submit" name="submit" id="submit" value="Enviar">
                         <br>
