@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $senha = $_POST['senha'];
 
-  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, sobrenome, cpf, email, senha) VALUES ('$nome','$sobrenome','$cpf','$email', '$senha')");
+  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, sobrenome, cpf, email, senha, pontos) VALUES ('$nome','$sobrenome','$cpf','$email', '$senha', 0)");
     
   header('Location: login.php');
 }
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     </head>
     <body>
         <main>
-            <form actio="cadastro.php" method="POST" class="form">
+            <form action="cadastro.php" method="POST" class="form">
                 <h1>Cadastro</h1>
                 <br>
                     <input type="text" name = "nome" placeholder="nome">
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
                     <input type="text" name = "cpf" placeholder="CPF (Apenas Numeros)">
                     <input type="email" name = "email" placeholder="email">
                     <input type="password" name = "senha" placeholder="senha">
-                <input  class="button-register" type="submit" name="submit" id="submit">
+                    <input  class="button-register" type="submit" name="submit" id="submit">
                 <a href="./login.php" class="voltar">Voltar</a>
             </form>
         </main>

@@ -1,17 +1,15 @@
 <?php
     session_start();
 
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
-
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: login.php');
-
+    if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
+        // Se o usuário não estiver autenticado, exiba uma mensagem de erro
+        echo "Usuário não autenticado. Por favor, faça login <a href='login.php'>aqui</a>.";
+        exit;
     } else {
+        // Se o usuário estiver autenticado, defina a variável $logado com o e-mail do usuário
         $logado = $_SESSION['email'];
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,80 +42,48 @@
         </header>
         
         <!-- TABELA -->
-        <div class="container">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">&#x2705</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Pontuação</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td>Andar de Onibus</td>
-                    <td>Escolher ir de onibus ao inves do carro, é uma otima ação sustentavel</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" aria-label="Marcar item"></td>
-                    <td></td>
-                    <td></td>
-                    <td>20</td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
+        <?php include './boas_acoes.php'; ?>
     </main>
 
 <?php
    // echo "<h1>Bem vindo $logado</h1>";
 ?>
+    <script src="./Js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('form').submit(function(event){
+            event.preventDefault(); // Impede o comportamento padrão do formulário
 
+            // Envia a requisição AJAX
+            $.ajax({
+                url: 'somar_pontos.php',
+                type: 'post',
+                data: $(this).serialize(), // Serializa os dados do formulário
+                dataType: 'json',
+                success: function(response){
+                    if(response.success){
+                        // Se a adição de pontos foi bem-sucedida, exibe a mensagem de sucesso
+                        $('#mensagem').text(response.message).removeClass('error').addClass('success');
+                        $(document).ready(function(){
+                        $('input[type=checkbox]').prop('checked', false);
+                        });
+                    } else {
+                        // Se ocorreu um erro, exibe a mensagem de erro
+                        $('#mensagem').text(response.message).removeClass('success').addClass('error');
+                    }
+                },
+                error: function(){
+                    // Em caso de erro na requisição AJAX, exibe uma mensagem genérica de erro
+                    $('#mensagem').text('Erro ao processar a solicitação').removeClass('success').addClass('error');
+                }
+            });
+        });
+    });
+    </script>
+
+    <!-- Adicione um elemento para exibir a mensagem -->
+    <div id="mensagem"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
