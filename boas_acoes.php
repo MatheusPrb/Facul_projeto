@@ -10,7 +10,7 @@
         // Exibe as boas ações em uma tabela HTML com classes do Bootstrap
         echo "<div class='container'>";
         echo "<form action='somar_pontos.php' method='post'>";
-        echo "<table class='table table-hove table-dark'>";
+        echo "<table class='table table-hover table-dark'>";
         echo "<thead>";
         echo "<tr><th>&#x2705</th><th>Nome</th><th>Descrição</th><th>Pontuação</th></tr>";
         echo "</thead>";
