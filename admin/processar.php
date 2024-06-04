@@ -1,6 +1,6 @@
 <?php
 
-  include_once('../config.php');
+  include_once('../config/config.php');
 
 // Recebe os dados do formulário
 $nome = $_POST['nome'];

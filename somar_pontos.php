@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include_once('./config.php');
+    include_once('./config/config.php');
 
     // Recebe os IDs das boas ações selecionadas do formulário
     $acoes_selecionadas = $_POST['acao_selecionada'];

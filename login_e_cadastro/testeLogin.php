@@ -4,7 +4,7 @@
 
   if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
         // Acessa
-        include_once('config.php');
+        include_once('../config/config.php');
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
@@ -21,11 +21,10 @@
         } else {
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            header('Location: tabelas.php');
+            header('Location: ../index.php');
         }
   } else  {
         // Não Acessa
         header('Location: login.php');
   }
-
 ?>
