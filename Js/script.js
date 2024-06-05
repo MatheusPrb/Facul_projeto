@@ -8,3 +8,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+//Dropdown user
+document.addEventListener('DOMContentLoaded', (event) => {
+    const userIcon = document.querySelector('.user-info a');
+    const userDropdown = document.querySelector('.user-dropdown');
+    
+    userIcon.addEventListener('click', (e) => {
+        e.preventDefault();
+        userDropdown.style.display = userDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Fechar o dropdown se clicar fora dele
+    document.addEventListener('click', (e) => {
+        if (!userIcon.contains(e.target) && !userDropdown.contains(e.target)) {
+            userDropdown.style.display = 'none';
+        }
+    });
+});

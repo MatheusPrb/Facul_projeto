@@ -6,8 +6,10 @@
         echo "Usuário não autenticado. Por favor, faça login <a href='./login_e_cadastro/login.php'>aqui</a>.";
         exit;
     } else {
-        // Se o usuário estiver autenticado, defina a variável $logado com o e-mail do usuário
-        $logado = $_SESSION['email'];
+        // Se o usuário estiver autenticado, defina a variável $emailUsuario com o e-mail do usuário
+        $nomeUsuario = $_SESSION['nome'];
+        $emailUsario = $_SESSION['email'];
+        $pontosUsuario = $_SESSION['pontos'];
     }
 ?>
 
@@ -25,20 +27,27 @@
 
 <body class="body-greenscore">
         <!-- Cabeçalho -->
-<header>    
-    <div class="container-greescore">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>   
-                <li><a href="index.php">AÇÔES SUSTENTÀVEIS</a></li>
-                <li><a href="premios.php">PRÊMIOS</a></li>
-                <li class="active"><a href="ranking.php">RANKING</a></li>
-                <li><a href=""><img src="./assets/user.png" class="user"></a></li>
-                <li><a href="./sair/sair.php" class="btn-sair">SAIR</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <header>    
+            <div class="container-greescore">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>   
+                        <li><a href="index.php">AÇÔES SUSTENTÀVEIS</a></li>
+                        <li><a href="premios.php">PRÊMIOS</a></li>
+                        <li class="active"><a href="ranking.php">RANKING</a></li>
+                        <li class="user-info">
+                        <a href="#"><img src="./assets/user.png" class="user"></a>
+                            <div class="user-dropdown">
+                                <p>Nome: <?php echo  $nomeUsuario ?> </p>
+                                <p>Email: <?php echo $emailUsario?> </p>
+                                <p>Pontos: <?php echo $pontosUsuario?> </p>
+                                <a href="./sair/sair.php" class="btn-sair">SAIR</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 <main>
 
 <h2>Ranking de Usuários</h2>
@@ -59,6 +68,6 @@
 </div>
 
 </main>
-
+<script src="./Js/script.js"></script>
 </body>
 </html>

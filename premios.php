@@ -1,14 +1,16 @@
 <?php
-session_start();
+    session_start();
 
-if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
-    // Se o usuário não estiver autenticado, exiba uma mensagem de erro
-    echo "Usuário não autenticado. Por favor, faça login <a href='./login_e_cadastro/login.php'>aqui</a>.";
-    exit;
-} else {
-    // Se o usuário estiver autenticado, defina a variável $logado com o e-mail do usuário
-    $logado = $_SESSION['email'];
-}
+    if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
+        // Se o usuário não estiver autenticado, exiba uma mensagem de erro
+        echo "Usuário não autenticado. Por favor, faça login <a href='./login_e_cadastro/login.php'>aqui</a>.";
+        exit;
+    } else {
+        // Se o usuário estiver autenticado, defina a variável $emailUsuario com o e-mail do usuário
+        $nomeUsuario = $_SESSION['nome'];
+        $emailUsario = $_SESSION['email'];
+        $pontosUsuario = $_SESSION['pontos'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +29,23 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
 <body class="body-greenscore">
     <main>
         <!-- Cabeçalho -->
-        <header>
+        <header>    
             <div class="container-greescore">
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>
+                        <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>   
                         <li><a href="index.php">AÇÔES SUSTENTÀVEIS</a></li>
                         <li class="active"><a href="premios.php">PRÊMIOS</a></li>
                         <li><a href="ranking.php">RANKING</a></li>
-                        <li><a href=""><img src="./assets/user.png" class="user"></a></li>
-                        <li><a href="./sair/sair.php" class="btn-sair">SAIR</a></li>
+                        <li class="user-info">
+                        <a href="#"><img src="./assets/user.png" class="user"></a>
+                            <div class="user-dropdown">
+                                <p>Nome: <?php echo  $nomeUsuario ?> </p>
+                                <p>Email: <?php echo $emailUsario?> </p>
+                                <p>Pontos: <?php echo $pontosUsuario?> </p>
+                                <a href="./sair/sair.php" class="btn-sair">SAIR</a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -47,6 +56,6 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
 
     </main>
 
-
+    <script src="./Js/script.js"></script>
 </body>
 </html>
