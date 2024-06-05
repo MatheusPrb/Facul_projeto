@@ -32,8 +32,8 @@
                     <ul class="nav-links">
                         <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>   
                         <li class="active"><a href="">AÇÔES SUSTENTÀVEIS</a></li>
-                        <li><a href="">PRÊMIOS</a></li>
-                        <li><a href="">PONTOS</a></li>
+                        <li><a href="premios.php">PRÊMIOS</a></li>
+                        <li><a href="ranking.php">RANKING</a></li>
                         <li><a href=""><img src="./assets/user.png" class="user"></a></li>
                         <li><a href="./sair/sair.php" class="btn-sair">SAIR</a></li>
                     </ul>
