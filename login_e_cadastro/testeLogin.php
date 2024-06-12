@@ -10,31 +10,20 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
   $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
   $result = $conexao->query($sql);
 
-  if (mysqli_num_rows($result) < 1) {
+    if (mysqli_num_rows($result) < 1) {
 
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header('Location: login.php');
-  } else {
-    $sql = "SELECT nome, email, pontos FROM usuarios";
-    $return = $conexao->query($sql);
-
-    if ($return->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        $nomeUsuario = $row["nome"];
-        $emailUsario = $row["email"];
-        $pontosUsuario = $row["pontos"];
-      }
+      unset($_SESSION['email']);
+      unset($_SESSION['senha']);
+      header('Location: login.php');
+    } else {
+      $user = $result->fetch_assoc();
       $_SESSION['email'] = $email;
       $_SESSION['senha'] = $senha;
-      $_SESSION['nome'] = $nomeUsuario;
-      $_SESSION['pontos'] = $pontosUsuario;
+      $_SESSION['nome'] = $user['nome'];
+      $_SESSION['pontos'] = $user['pontos'];
       header('Location: ../index.php');
-    } else {
-      echo "Usuario não encontrado";
     }
-  }
-} else {
+}else {
   // Não Acessa
   header('Location: login.php');
-}
+  }
