@@ -6,10 +6,7 @@
         echo "Usuário não autenticado. Por favor, faça login <a href='./login_e_cadastro/login.php'>aqui</a>.";
         exit;
     } else {
-        // Se o usuário estiver autenticado, defina a variável $emailUsuario com o e-mail do usuário
-        $nomeUsuario = $_SESSION['nome'];
-        $emailUsario = $_SESSION['email'];
-        $pontosUsuario = $_SESSION['pontos'];
+
     }
 ?>
 
@@ -39,12 +36,7 @@
                         <li><a href="ranking.php">RANKING</a></li>
                         <li class="user-info">
                         <a href="#"><img src="./assets/user.png" class="user"></a>
-                            <div class="user-dropdown">
-                                <p>Nome: <?php echo  $nomeUsuario ?> </p>
-                                <p>Email: <?php echo $emailUsario?> </p>
-                                <p>Pontos: <?php echo $pontosUsuario?> </p>
-                                <a href="./sair/sair.php" class="btn-sair">SAIR</a>
-                            </div>
+                            <?php include 'user_info.php'; ?>
                         </li>
                     </ul>
                 </nav>

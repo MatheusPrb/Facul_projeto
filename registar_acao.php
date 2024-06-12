@@ -1,10 +1,6 @@
 <?php
 session_start();
-header('Content-Type: application/json');
-
 include_once('./config/config.php');
-
-$response = array();
 
 // Verifica se a requisição é POST e se a ação foi enviada
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['acao_id'])) {
@@ -34,33 +30,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['acao_id'])) {
             $sql_update = "UPDATE usuarios SET pontos = pontos + $pontos_acao WHERE id = $id_do_usuario";
             if ($conexao->query($sql_update) === TRUE) {
                 // Insere a realização da ação com data/hora
-                $sql_insert_acao_realizada = "INSERT INTO acoes_realizadas (usuario_id, acao_id, data_hora) VALUES ('$id_do_usuario', '$acao_id', '$data_hora')";
+                $sql_insert_acao_realizada = "INSERT INTO acoes_realizadas (usuario_id, acao_id, data, data_hora) VALUES ('$id_do_usuario', '$acao_id', CURDATE(), '$data_hora')";
                 if ($conexao->query($sql_insert_acao_realizada) === TRUE) {
-                    $response['success'] = true;
-                    $response['message'] = "Ação realizada com sucesso!";
+                    echo "Ação registrada e pontos somados com sucesso!";
                 } else {
-                    $response['success'] = false;
-                    $response['message'] = "Erro ao registrar a ação: " . $conexao->error;
+                    echo "Erro ao registrar a ação: " . $conexao->error;
                 }
             } else {
-                $response['success'] = false;
-                $response['message'] = "Erro ao somar pontos: " . $conexao->error;
+                echo "Erro ao somar pontos: " . $conexao->error;
             }
         } else {
-            $response['success'] = false;
-            $response['message'] = "Nenhum usuário encontrado com o email $email_do_usuario.";
+            echo "Nenhum usuário encontrado com o email $email_do_usuario.";
         }
     } else {
-        $response['success'] = false;
-        $response['message'] = "Nenhuma ação encontrada com o ID $acao_id.";
+        echo "Nenhuma ação encontrada com o ID $acao_id.";
     }
 } else {
-    $response['success'] = false;
-    $response['message'] = "Requisição inválida.";
+    echo "Requisição inválida.";
 }
-
-// Retorna a resposta em formato JSON
-echo json_encode($response);
 
 // Fecha a conexão
 $conexao->close();
