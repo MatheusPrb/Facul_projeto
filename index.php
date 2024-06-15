@@ -24,13 +24,14 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
 <body class="body-greenscore">
     <main>
         <!-- Cabeçalho -->
-        <header>
+        <header class="header">
             <div class="container-greescore">
                 <nav>
                     <ul class="nav-links">
                         <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>
                         <li class="active"><a href="index.php">AÇÕES SUSTENTÁVEIS</a></li>
                         <li><a href="premios.php">PRÊMIOS</a></li>
+                        <li><a href="meus_cupons.php">MEUS CUPONS</a></li>
                         <li><a href="ranking.php">RANKING</a></li>
                         <li class="user-info">
                             <a href="#"><img src="./assets/user.png" class="user"></a>
@@ -46,8 +47,6 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Adicione um elemento para exibir a mensagem -->
-    <div id="mensagem" class="mensagem"></div>
 
     <script src="./Js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
