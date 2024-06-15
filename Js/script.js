@@ -10,18 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //Dropdown user
-document.addEventListener('DOMContentLoaded', (event) => {
-    const userIcon = document.querySelector('.user-info a');
-    const userDropdown = document.querySelector('.user-dropdown');
-    
-    userIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        userDropdown.style.display = userDropdown.style.display === 'block' ? 'none' : 'block';
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const userButton = document.querySelector('.user-info a');
+    const userDropdown = document.getElementById('user-dropdown');
 
-    // Fechar o dropdown se clicar fora dele
-    document.addEventListener('click', (e) => {
-        if (!userIcon.contains(e.target) && !userDropdown.contains(e.target)) {
+    userButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (userDropdown.style.display === 'none') {
+            userDropdown.style.display = 'block';
+        } else {
             userDropdown.style.display = 'none';
         }
     });

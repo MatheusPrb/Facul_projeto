@@ -1,38 +1,31 @@
+<link rel="stylesheet" href="./css/premios.css">
+
 <?php
-    include_once('./config/config.php');
+include_once('./config/config.php');
 
-    // Consulta SQL para recuperar as boas ações
-    $sql = "SELECT * FROM premiacoes";
-    $result = $conexao->query($sql);
+$sql = "SELECT id, nome, pontos FROM premiacoes";
+$result = $conexao->query($sql);
 
-    // Verifica se há boas ações
-    if ($result->num_rows > 0) {
-        // Exibe as boas ações em uma tabela HTML com classes do Bootstrap
-        echo "<div class='container'>";
-        echo "<form action='somar_pontos.php' method='post'>";
-        echo "<table class='table table-hover table-dark rounded overflow-hidden text-center'>";
-        echo "<thead>";
-        echo "<tr><th>Nome</th><th>Descrição</th><th>Pontuação</th><th>&#x2705</th></tr>";
-        echo "</thead>";
-        echo "<tbody>";
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["nome"] . "</td>";
-            echo "<td>" . $row["descricao"] . "</td>";
-            echo "<td>" . $row["pontos"] . "</td>";
-            echo "<td><input type='checkbox' name='acao_selecionada[]' value='" . $row["id"] . "' aria-label='Marcar item'></td>";
-            echo "</tr>";
-        }
-        echo "</tbody>";
-        echo "</table>";
-        echo "<input type='hidden' name='email' value='" . (isset($_POST['email']) ? $_POST['email'] : '') . "'>";
-        echo "<input type='submit' name='submit' value='Somar'>";
-        echo "</form>";
+if ($result->num_rows > 0) {
+    echo "<div class='container my-5'>";
+    echo "<div class='row'>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='col-md-4 mb-4'>";
+        echo "<div class='card shadow-sm border-0'>";
+        echo "<div class='card-body text-center'>";
+        echo "<div class='card-icon mb-3'><i class='fas'></i></div>";
+        echo "<h5 class='card-title'>" . $row["nome"] . "</h5>";
+        echo "<p class='card-text'><strong>Pontos: " . $row["pontos"] . "</strong></p>";
+        echo "<button class='btn btn-redeem action-button' data-id='" . $row["id"] . "' data-nome='" . $row["nome"] . "' data-pontos='" . $row["pontos"] . "'>Resgatar</button>";
         echo "</div>";
-    } else {
-        echo "Nenhuma premiação cadastrada.";
+        echo "</div>";
+        echo "</div>";
     }
+    echo "</div>";
+    echo "</div>";
+} else {
+    echo "<p class='text-center'>Nenhuma premiação cadastrada.</p>";
+}
 
-    // Fecha a conexão
-    $conexao->close();
+$conexao->close();
 ?>

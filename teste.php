@@ -28,7 +28,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Boas Ações</h1>
+        
         <?php
         include_once('./config/config.php');
 
@@ -69,12 +69,12 @@
                     }
 
                     echo "<div class='card' id='card_$acao_id' style='" . ($acao_realizada ? "opacity: 0.5;" : "") . "'>";
-                    echo "<div class='card-header' style='background-color: dodgerblue; color: white;'>";
+                    echo "<div class='card-header' color: white;'>";
                     echo "<p class='card-text'>" . $row["nome"] . "</p>";
                     echo "</div>";
                     echo "<div class='card-body'>";
                     echo "<p class='card-text'>" . $row["descricao"] . "</p>";
-                    echo "<p class='card-text'>Pontuação: " . $row["pontos"] . "</p>";
+                    echo "<p class='card-text-p' class='teste'>Pontuação: " . $row["pontos"] . "</p>";
 
                     if ($acao_realizada) {
                         echo "<p class='card-text'>Você só poderá realizar essa boa ação novamente em:</p>";
@@ -83,7 +83,7 @@
                     } else {
                         echo "<form id='form_$acao_id' action='somar_pontos.php' method='post' onsubmit='realizarAcao(event, $acao_id)'>";
                         echo "<input type='hidden' name='acao_id' value='" . $acao_id . "'>";
-                        echo "<button type='submit' class='action-button' style='background-color: dodgerblue; color: white;'>Realizar Ação</button>";
+                        echo "<button type='submit' class='action-button' color: white;'>Realizar Ação</button>";
                         echo "</form>";
                     }
 

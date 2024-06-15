@@ -1,0 +1,18 @@
+.card-cupom {
+    border: none !important;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 0 0 0.20rem 0 #000;
+    border-radius: 0.5rem;
+    
+    
+}
+
+
+.titulo-cupom{
+    font-weight: bold;
+}
+
+.cupom {
+    color: #218838;
+    font-weight: bold;
+}

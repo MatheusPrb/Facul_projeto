@@ -12,11 +12,11 @@
     <main>
         <div class="container">
             <div class="texto">
-                <h1>Esse é o GreenScore, um site feito para transformar ações sustentaveis em premios e beneficios</h1>
+                <h1>Esse é o GreenScore, um site feito para transformar ações sustentáveis em premios e beneficios</h1>
                     <br><br>
                     <h2>Funciona assim:</h2>
                     <br>
-                    <h3>Você realiza uma boa ação, contabiliza ela no site e acoumula pontos<br>Quando juntar bastante pontos, poderá ir na aba de trocas e escolher entre diversos premios e promoções</h3>
+                    <h3>Você realiza uma boa ação, contabiliza ela no site e acumula pontos<br>Quando juntar bastante pontos, poderá ir na aba de trocas e escolher entre diversos premios e promoções</h3>
                     <br><br>
                     <h2>Então aproveite e bora ser sustentavel!</h2>
                 </div>

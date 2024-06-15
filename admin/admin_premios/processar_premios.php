@@ -4,11 +4,11 @@
 
 // Recebe os dados do formulário
 $nome = $_POST['nome'];
-$descricao = $_POST['descricao'];
+$cupom = $_POST['cupom'];
 $pontos = $_POST['pontos'];
 
 // Insere a nova boa ação no banco de dados
-$sql = "INSERT INTO premiacoes (nome, descricao, pontos) VALUES ('$nome', '$descricao', '$pontos')";
+$sql = "INSERT INTO premiacoes (nome, cupom, pontos) VALUES ('$nome', '$cupom', '$pontos')";
 
 if ($conexao->query($sql) === TRUE) {
     echo "Premiação adicionada com sucesso!";

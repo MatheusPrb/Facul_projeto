@@ -11,8 +11,8 @@
         <label for="nome">Nome do Prêmio:</label><br>
         <input type="text" id="nome" name="nome"><br><br>
 
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao"></textarea><br><br>
+        <label for="cupom">Cupom:</label><br>
+        <textarea id="cupom" name="cupom"></textarea><br><br>
 
         <label for="pontos">Pontuação necessária:</label><br>
         <input type="number" id="pontos" name="pontos"><br><br>
