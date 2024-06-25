@@ -1,4 +1,4 @@
-<?php include_once('session.php');?>
+<?php include_once('session.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,11 +15,13 @@
 </head>
 
 <body class="body-greenscore">
-        <header>
-            <div class="container-greenscore">
+    <header>
+        <div class="container-greenscore">
+            <div class="logo">
+                    <a href="index.php"><img src="./assets/icone.png" class="logo"></a>
+            </div>
                 <nav>
-                <ul class="nav-links">
-                        <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>
+                    <ul class="nav-links">
                         <li><a href="index.php">AÇÕES SUSTENTÁVEIS</a></li>
                         <li class="active"><a href="premios.php">PRÊMIOS</a></li>
                         <li><a href="meus_cupons.php">MEUS CUPONS</a></li>
@@ -34,38 +36,59 @@
                                     <button id="atualizar_pontos" class="fa botao-atualizar">&#xf021;</button>
                                 </div>
                                 <a href='./sair/sair.php' class='btn-sair'>SAIR</a>
+                            </div>
                         </li>
+                        <button id="menuButton" class="button-mobile" onclick="toggleSidebar()">
+                            <img src="./assets/menu.png" alt="botão menu mobile">
+                        </button>
+                        <button id="closeButton" class="button-mobile" style="display: none;" onclick="toggleSidebar()">
+                            <img src="./assets/close-button.png" alt="botão fechar">
+                        </button>
                     </ul>
                 </nav>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="container-sidebar">
+                <a href="index.php">AÇÕES SUSTENTÁVEIS</a>
+                <a class="active" href="premios.php">PRÊMIOS</a>
+                <a href="meus_cupons.php">MEUS CUPONS</a>
+                <a href="ranking.php">RANKING</a>
+                <div class="pontos_refresh">
+                    <p id="pontos_usuario2" class="pontos-usuario">Pontos do usuário: Carregando...</p>
+                    <button id="atualizar_pontos2" class="fa botao-atualizar">&#xf021;</button>
+                </div>
+            <a href='./sair/sair.php' class='btn-sair'>SAIR</a>
             </div>
-        </header>
-        <main>
-            <h1 class="titulo">Prêmios</h1>
-            <?php include_once('tabela_premios.php'); ?>
+        </div>
+    </header>
+    <main>
+        <h1 class="titulo">Prêmios</h1>
+        <?php include_once('tabela_premios.php'); ?>
 
-            <!-- Contêiner para exibir o cupom -->
-            <div id="cupomContainer" class="container my-5" style="display:none;">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card shadow-sm border-0 smaller-card">
-                            <div class="card-body text-center smaller-card-body">
-                                <h5 class="card-title">Cupom Resgatado</h5>
-                                <p id="cupomText"></p>
-                                <p>Cada cupom é válido apenas uma vez.</p>
-                                <p>Você pode encontrar seus cupons na aba Meus Cupons.</p>
-                            </div>
+        <!-- Contêiner para exibir o cupom -->
+        <div id="cupomContainer" class="container my-5" style="display:none;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow-sm border-0 smaller-card">
+                        <div class="card-body text-center smaller-card-body">
+                            <h5 class="card-title">Cupom Resgatado</h5>
+                            <p id="cupomText"></p>
+                            <p>Cada cupom é válido apenas uma vez.</p>
+                            <p>Você pode encontrar seus cupons na aba Meus Cupons.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-    
+        </div>
+    </main>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./Js/script.js"></script>
     <script src="./Js/atualiza_pontos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6jG6tB7nvzPR0a2tbGQu1zRi6ZAjT5QxU0L4Ucc0T7Hjp6DU4yl" crossorigin="anonymous"></script>
     <script>
-       $(document).ready(function() {
+        $(document).ready(function() {
             $('.btn-redeem').click(function() {
                 var cupomId = $(this).data('id');
                 var userId = <?php echo $_SESSION['user_id']; ?>;
@@ -84,9 +107,9 @@
                             $('#cupomContainer').show();
                             $('[data-id="' + cupomId + '"]').prop('disabled', true);
                             // Scroll suave até o contêiner do cupom
-                        $('html, body').animate({
-                        scrollTop: $('#cupomContainer').offset().top - 100 // Ajuste opcional para um deslocamento vertical
-                        }, 1000);
+                            $('html, body').animate({
+                                scrollTop: $('#cupomContainer').offset().top - 100 // Ajuste opcional para um deslocamento vertical
+                            }, 1000);
                         } else {
                             alert(data.message);
                         }
@@ -99,4 +122,5 @@
         });
     </script>
 </body>
+
 </html>

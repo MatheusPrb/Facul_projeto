@@ -1,11 +1,16 @@
 <?php
-$dbhost = 'sql206.infinityfree.com'; 
-$dbUsername = 'if0_36733703';
-$dbPassword = 'Matheus220404';
-$dbName = 'if0_36733703_greenscore';
+$dbhost = 'localhost'; 
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'greenscore';
 
 // Criar conexão
 $conexao = new mysqli($dbhost, $dbUsername, $dbPassword, $dbName);
+
+if($conexao){
+
+  // echo  'conectado';
+}
 
 // Verificar a conexão
 if ($conexao->connect_error) {

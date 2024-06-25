@@ -7,18 +7,11 @@
 .body-greenscore {
     height: 100vh;
     width: 100vw; 
-    font-family: Arial, sans-serif;
     background-image: linear-gradient(45deg, cyan, yellow);
     background-attachment: fixed;
     font-size: 100%;
     padding-top: 70px;
-}
-
-body {
-    height: 100vh;
-    width: 100vw; 
     font-family: Arial, sans-serif;
-    font-size: 100%;
     padding-top: 70px;
     overflow-x: hidden; /* Adicionado para evitar rolagem horizontal */
 }
@@ -36,7 +29,7 @@ body {
     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); Sombra do texto para destaque */
 }
 
-.container-greenscore {
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,14 +38,19 @@ body {
     background-color: #ffffff;/* Defina um fundo para o header */
     box-shadow: 0 0 1.25rem 0 #000;
     max-width: 100%; /* Ajustado para não ultrapassar a largura da viewport */
-    padding: 5px 5px; /* Ajuste conforme necessário */
-    
+}
+
+header .container-greenscore {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .container-greenscore {
-    max-width: 100%; /* Ajuste conforme necessário */
+    width: 100%;
+    max-width: 123.6rem;
     margin: 0 auto;
-    padding: 5px 5px; /* Ajuste conforme necessário */
+    padding: 0.5rem;
 }
 
 .nav-links {
@@ -75,16 +73,16 @@ body {
 }
 
 .nav-links .active a {
-    border-bottom: 4px solid #23560a;
-    padding-bottom: .3rem
+    border-bottom: 3px solid #27ae60;
+    color: #27ae60; /* Verde suave no hover */
 }
 
 .logo {
-    width: 15%;
+    width: 70px;
 }
 .user{
     margin-top: 10%;
-    height: 3rem;
+    /* height: 3rem; */
 }
 /* Estilo para o dropdown do usuário */
 .user-info {
@@ -143,11 +141,23 @@ body {
 }
 
 .botao-atualizar {
+    background: none;
     border: none;
     margin-top: auto;
     margin-left: 10px;
     margin-bottom: 12px;
 }
+
+.pontos_refresh .botao-atualizar:hover {
+
+    background: none;
+    border: none;
+    color: #27ae60; /* Cor verde no hover */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s; /* Transição suave */
+}
+
 
 .smaller-card {
     /* Estilos para reduzir o tamanho do card */
@@ -157,4 +167,154 @@ body {
 .smaller-card-body {
     /* Estilos para o corpo do card */
     padding: 20px; /* Ajuste de espaçamento interno */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: calc(100% - 80px); /* Altura ajustada para descontar a altura do header */
+    width: 0;
+    position: fixed;
+    z-index: 500; /* Menor que o z-index do header para ficar atrás dele */
+    top: 80px; /* Altura do header */
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+}
+.sidebar a {
+    margin-bottom: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #33502c;
+    display: block;
+    transition: color 0.3s, background-color 0.3s; /* Transições suaves */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    border-bottom: 3px solid #27ae60;
+    padding-bottom: .2rem;
+    background-color: #ecf0f1; /* Fundo claro no hover */
+    color: #27ae60; /* Verde suave no hover */
+}
+
+.sidebar .active {
+    border-bottom: 3px solid #27ae60;
+    color: #27ae60; /* Verde suave no hover */
+}
+
+.container-sidebar {
+    display: flex; /* Adiciona flexbox */
+    flex-direction: column; /* Itens em coluna */
+    justify-content: flex-start; /* Itens no início da coluna */
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+}
+
+.sidebar .pontos_refresh {
+    margin: 2rem 0;
+    color: #30502c;
+}
+
+.sidebar .pontos-usuario {
+    color: #30502c;
+}
+
+.sidebar .btn-sair {
+    margin-top: auto; /* Empurra o botão para o final */
+    text-align: center;
+    width: 100%;
+    background-color: #27ae60;
+    color: #ffffff; /* Texto branco */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar .btn-sair:hover {
+    background-color: #1e8449; /* Tom mais escuro de verde no hover */
+}
+
+.sidebar .botao-atualizar {
+    background: none;
+    border: none;
+    color: #30502c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s; /* Transição suave */
+}
+
+.sidebar .botao-atualizar:hover {
+    color: #27ae60; /* Cor verde no hover */
+}
+
+header .button-mobile {
+    display: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotate 1s linear infinite;
+}
+
+
+/* Styles for screens up to 1200px width */
+@media (max-width: 1024px) {
+
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        width: 4rem;
+    }
+
+    header .container-greenscore {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    header .button-mobile {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+     header .nav-links li{
+        display: none;
+    }
+    
+    .nav-links {
+        justify-content: end !important;
+    }
+
+    .pontos_refresh p{
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+
+    .botao-atualizar {
+        margin: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
 }

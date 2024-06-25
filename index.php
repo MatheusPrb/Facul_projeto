@@ -16,11 +16,13 @@
 </head>
 
 <body class="body-greenscore">
-        <header class="header">
-            <div class="container-greenscore">
+    <header>
+        <div class="container-greenscore">
+            <div class="logo">
+                    <a href="index.php"><img src="./assets/icone.png" class="logo"></a>
+            </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.php"><img src="./assets/icone.png" class="logo"></a></li>
                         <li class="active"><a href="index.php">AÇÕES SUSTENTÁVEIS</a></li>
                         <li><a href="premios.php">PRÊMIOS</a></li>
                         <li><a href="meus_cupons.php">MEUS CUPONS</a></li>
@@ -35,12 +37,33 @@
                                     <button id="atualizar_pontos" class="fa botao-atualizar">&#xf021;</button>
                                 </div>
                                 <a href='./sair/sair.php' class='btn-sair'>SAIR</a>
+                            </div>
                         </li>
+                        <button id="menuButton" class="button-mobile" onclick="toggleSidebar()">
+                            <img src="./assets/menu.png" alt="botão menu mobile">
+                        </button>
+                        <button id="closeButton" class="button-mobile" style="display: none;" onclick="toggleSidebar()">
+                            <img src="./assets/close-button.png" alt="botão fechar">
+                        </button>
                     </ul>
                 </nav>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="container-sidebar">
+                <a class="active" href="index.php">AÇÕES SUSTENTÁVEIS</a>
+                <a href="premios.php">PRÊMIOS</a>
+                <a href="meus_cupons.php">MEUS CUPONS</a>
+                <a href="ranking.php">RANKING</a>
+                <div class="pontos_refresh">
+                    <p id="pontos_usuario2" class="pontos-usuario">Pontos do usuário: Carregando...</p>
+                    <button id="atualizar_pontos2" class="fa botao-atualizar">&#xf021;</button>
+                </div>
+            <a href='./sair/sair.php' class='btn-sair'>SAIR</a>
             </div>
-        </header>
-        <main>
+        </div>
+    </header>
+    <main>
             <h1 class="titulo">Boas Ações</h1>
             <?php include_once('teste.php'); ?>
         </main>
@@ -50,5 +73,4 @@
     <script src="./Js/atualiza_pontos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>

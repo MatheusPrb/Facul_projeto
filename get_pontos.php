@@ -1,13 +1,6 @@
 <?php
-session_start();
 include_once('./config/config.php');
-if (isset($_SESSION['email']) && isset($_SESSION['nome'])) {
-    $nomeUsuario1 = $_SESSION['nome'];
-    $emailUsuario = $_SESSION['email'];
-} else {
-    echo "Usuário não autenticado. Por favor, faça login <a href='./login_e_cadastro/login.php'>aqui</a>.";
-    exit;
-}
+include_once('session.php');
 
 // Preparar a consulta
 $sql = "SELECT pontos FROM usuarios WHERE email = ?";
