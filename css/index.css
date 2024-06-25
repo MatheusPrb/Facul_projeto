@@ -153,7 +153,6 @@ header .container-greenscore {
     background: none;
     border: none;
     color: #27ae60; /* Cor verde no hover */
-    font-size: 1.2rem;
     cursor: pointer;
     transition: color 0.3s; /* Transição suave */
 }

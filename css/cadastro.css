@@ -24,29 +24,28 @@ main {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9) !important;
-    padding: 3rem;
     border-radius: .75rem;
     color: white;
-    width: 20%;
     gap: .75rem;
+    padding: 3rem; /* Ajuste padrão de padding */
 }
 
 input {
-    padding: 15px;
+    padding: 0.938rem;
     border: none;
     border-radius: .3rem;
     outline: none;
-    font-size: 15px;
+    font-size: 0.938rem;
 }
 
 .button-register {
     background-color: dodgerblue;
     border: none;
     padding: 1rem;
-    width: 100%;
+    width: auto;
     border-radius: .3rem;
     color: white;
-    font-size: 15px;
+    font-size: 0.938rem;
     transition: background-color 0.3s ease;
 }
 
@@ -58,4 +57,34 @@ input {
 .voltar {
     text-decoration: none;
     color: aliceblue;
+}
+
+@media screen and (max-width: 767px) {
+    .form {
+        padding: 3rem; /* Ajuste para telas menores */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form {
+        padding: 3rem; /* Ajuste para telas médias */
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 2559px) {
+    .form {
+        padding: 4rem; /* Ajuste para telas maiores */
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .form {
+        padding: 5rem; /* Ajuste para telas extra grandes */
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .form {
+        padding: 5rem; /* Ajuste para telas muito grandes */
+    }
 }
